@@ -5,15 +5,17 @@ h1, p {
 }
 
 body {
-  background-color: blueviolet;
+  background-color: rgb(211, 178, 241);
 }
 
 .accordion {
   max-width: 400px;
-  margin: 30px auto;
-  -webkit-box-shadow: 0px 6px 36px -2px rgba(0,0,0,0.5);
+  margin: 2px auto;
+  border-radius: 5px;
+  /* margin: 30px auto; */
+  /* -webkit-box-shadow: 0px 6px 36px -2px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 6px 36px -2px rgba(0,0,0,0.5);
-  box-shadow: 0px 6px 36px -2px rgba(0,0,0,0.5);
+  box-shadow: 0px 6px 36px -2px rgba(0,0,0,0.5); */
 }
 
 .toggable {
@@ -21,7 +23,8 @@ body {
 }
 
 .toggable:hover {
-  background-color: #ff0b0b;
+  background-color: #f7b1b1;
+
 }
 
 .toggable:first-of-type {
@@ -43,9 +46,13 @@ body {
 }
 
 .toggable_content {
-  padding: 15px;
-  animation: shift 1s;
+  padding: 3px;
+  animation: shift 200ms;
+  background-color: white; 
 }
+/* .toggable_content :hover {
+  background-color: #e9f3f3; 
+} */
 
 @keyframes shift {
   0% { max-height: 0; color: rgba(0,0,0,0); transform: translateY(-5px) }

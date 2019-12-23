@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Accordian.css'; 
 // import './App.css';
 
+
 export const Toggle = (props) => (
 
   <div className="toggable">
@@ -25,14 +26,14 @@ export class Accordion extends Component {
     this.state = {
       active: this.props.activeDefault
     }
-    console.log(this.state)
   }
 
   setActive = (i) => {
     this.setState(oldState => ({
         active: oldState.active === i ? null : i
-    }))
+    }));
   }
+  
 
   render() {
     const children = React.Children.map(this.props.children, (child, i) => {

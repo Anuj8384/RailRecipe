@@ -1,53 +1,49 @@
-import React,{Component} from 'react';
+import React, { Component } from "react";
 // import logo from './logo.svg';
-import './App.css';
-import Ninja from './component/ninja';
-import axios from 'axios';
-import { config } from './config/config';
+import "./App.css";
+import Ninja from "./component/ninja";
+import axios from "axios";
+import { config } from "./config/config";
 
-
-
-
-const initialState  = {
-  loading:false,
-  resData : {}
- 
-}
+const initialState = {
+  loading: false,
+  resData: {}
+};
 
 class App extends Component {
-  
-  constructor(){
-
+  constructor() {
     super();
     this.state = initialState;
-    
   }
 
-  componentDidMount(){
-    axios.get(config.url+'/menu/336',{
-      headers: { 
-        'Authorization': config.key
-
-      }
-    }
-   ).then((res) => {
-console.log(res)
-const resData = res.data;
-this.setState({resData : {...resData},loading:true});
-
-   })
+  componentDidMount() {
+    axios
+      .get(config.url + "/menu/01", {
+        headers: {
+          Authorization: config.key
+        }
+      })
+      .then(res => {
+        const resData = res.data;
+        this.setState({ resData: { ...resData }, loading: true });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
+
+  addToCards = data => {
+    console.log(data);
+  };
   render() {
     // const {id, name} = this.state;
     return (
       <div className="App">
         <header className="App-header">
-    <p>Welcome App</p>
-    <button></button>
+          <h3 style={{ textAlign: "center", paddingTop: "20px" }}>Food Card</h3>
         </header>
-        <Ninja data={this.state} />
+        <Ninja data={this.state} addToCards={this.addToCards} />
       </div>
-     
     );
   }
 }
