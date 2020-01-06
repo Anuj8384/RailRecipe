@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import _ from "lodash/collection";
 import { Accordion, Toggle } from "./Accordian/Accordion";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle,faRupeeSign } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCircle,faRupeeSign } from '@fortawesome/free-solid-svg-icons'
 
-const vegIcon = <FontAwesomeIcon icon={faCircle} />;
-const rsIcon =  <FontAwesomeIcon icon={faRupeeSign} />;
+// const vegIcon = <FontAwesomeIcon icon={faCircle} />;
+// const rsIcon =  <FontAwesomeIcon icon={faRupeeSign} />;
 
-class Ninja extends Component {
+class FoodList extends Component {
   // constructor(addItems){
   //   super();
   // }
@@ -35,14 +35,14 @@ class Ninja extends Component {
                           <tbody>
                             <tr>
                               <td style={{ width: "70%" }}>
-                <i className="fa fa-circle text-success">{vegIcon}</i>{" "}
+                <i style={{color:'green'}} className="fa fa-circle text"></i>{" "}
                                 {x.itemName}
                                 <br />
                                 <small>
                                   <span
                                     className="fa fa-inr"
                                     style={{ padding: "8px", fontSize: "16px" }}
-                                  >{rsIcon}
+                                  >
                                     &nbsp;{x.sellingPrice}
                                   </span>
                                 </small>
@@ -90,7 +90,7 @@ class Ninja extends Component {
     return <div>{data.loading ? <div>{items}</div> : null}</div>;
   }
 }
-export default Ninja;
+export default FoodList;
 
 /* <div style={{border:'solid .1em',fontSize:'14px',height:'50px'}} key={x.itemId}>{x.itemName} 
          <button key={x.itemId} onClick={ () => {addItems(x)}}>Add</button>
